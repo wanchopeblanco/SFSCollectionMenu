@@ -52,7 +52,7 @@ typedef NS_ENUM(NSInteger, SFSLightEffectType) {
 - (void)controller:(SFSCollectionMenuController *)controller didTapButtonAtIndexPath:(NSIndexPath *)indexPath;
 - (NSInteger)numberOfButtonsInMenuController:(SFSCollectionMenuController *)controller;
 - (UIImage *)imageForButtonAtIndexPath:(NSIndexPath *)indexPath;
-- (UIImage *)titleForButtonAtIndexPath:(NSIndexPath *)indexPath;
+- (NSString *)titleForButtonAtIndexPath:(NSIndexPath *)indexPath;
 - (UIView *)viewForMenu;
 
 // Accessibility methods
