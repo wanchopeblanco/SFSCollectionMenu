@@ -45,7 +45,7 @@
     return images[indexPath.row];
 }
 
-- (UIImage *)titleForButtonAtIndexPath:(NSIndexPath *)indexPath {
+- (NSString *)titleForButtonAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *images = @[@"6 PM",
                         @"7 AM",
                         @"Manaña",
