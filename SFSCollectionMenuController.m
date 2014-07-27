@@ -190,8 +190,10 @@
             [self collectionView:self.collectionView didSelectItemAtIndexPath:indexPath];
         } else {
             [self dismissMenuWithCompletion:^{
-                NSLog(@"dismissed menu from handleSingleTap:");
                 self.currentOrientation = [[UIApplication sharedApplication] statusBarOrientation];
+                if ([self.delegate respondsToSelector:@selector(controller:didTapButtonAtIndexPath:)]) {
+                    [self.delegate controller:self didTapButtonAtIndexPath:nil];
+                }
             }];
         }
     }
