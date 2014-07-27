@@ -12,9 +12,11 @@
 
 @property (nonatomic, strong) UIImageView *backgroundImageView;
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UILabel *title;
 
 - (void)setBackgroundColorForCell:(UIColor *)color;
 - (void)setBackgroundImageForCell:(UIImage *)image;
 - (void)setImageForCell:(UIImage *)image;
+- (void)setTitleForCell:(NSString *)title;
 
 @end

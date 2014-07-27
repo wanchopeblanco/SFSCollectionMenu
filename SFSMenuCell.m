@@ -13,6 +13,7 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
+    frame.size.height +=14;
     self = [super initWithFrame:frame];
     if (self) {
         self.contentView.layer.cornerRadius = 35.0f;
@@ -21,12 +22,21 @@
         self.contentView.backgroundColor = [UIColor darkGrayColor];
         
         [self setAlpha:1.0];
+        CGRect rect = self.bounds;
+        rect.size.height -=14;
         
-        self.backgroundImageView = [[UIImageView alloc] initWithFrame:self.bounds];
-        self.imageView = [[UIImageView alloc] initWithFrame:self.bounds];
+        self.backgroundImageView = [[UIImageView alloc] initWithFrame:rect];
+        self.imageView = [[UIImageView alloc] initWithFrame:rect];
+        self.title = [[UILabel alloc]initWithFrame:CGRectMake(0, self.bounds.size.height-14, self.bounds.size.width, 14)];
+        
+        [self.title setTextColor:[UIColor whiteColor]];
+        [self.title setTextAlignment:NSTextAlignmentCenter];
+        [self.title setFont:[UIFont fontWithName:@"HelveticaNeue" size:14]];
+        [self.title setMinimumScaleFactor:0.7];
         
         [self addSubview:self.backgroundImageView];
         [self.contentView addSubview:self.imageView];
+        [self.contentView addSubview:self.title];
     }
     return self;
 }
@@ -64,6 +74,10 @@
     
     [self.imageView setFrame:CGRectMake(newOrigin.x, newOrigin.y, image.size.width, image.size.height)];
     [self.imageView setImage:image];
+}
+
+- (void)setTitleForCell:(NSString *)title{
+    [self.title setText:title];
 }
 
 

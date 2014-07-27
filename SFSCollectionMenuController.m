@@ -362,6 +362,16 @@
             }
         }
         
+        // foreground image
+        if ([self.delegate respondsToSelector:@selector(titleForButtonAtIndexPath:)]) {
+            [cell setTitleForCell:[self.delegate titleForButtonAtIndexPath:indexPath]];
+            if (!isButtonEnabled) {
+                [cell.title setAlpha:0.5f];
+            } else {
+                [cell.title setAlpha:1.0f];
+            }
+        }
+        
         // Accessibility label
         if ([self.delegate respondsToSelector:@selector(accessibilityLabelForButtonAtIndexPath:)]) {
             [cell setAccessibilityLabel:[self.delegate accessibilityLabelForButtonAtIndexPath:indexPath]];

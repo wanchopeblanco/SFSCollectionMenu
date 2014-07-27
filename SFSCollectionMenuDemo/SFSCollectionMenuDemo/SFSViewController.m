@@ -36,12 +36,22 @@
 }
 
 - (UIImage *)imageForButtonAtIndexPath:(NSIndexPath *)indexPath {
-    NSArray *images = @[[UIImage imageNamed:@"camera"],
-                        [UIImage imageNamed:@"chatBubble"],
-                        [UIImage imageNamed:@"phone"],
-                        [UIImage imageNamed:@"star"],
-                        [UIImage imageNamed:@"tag"],
-                        [UIImage imageNamed:@"voicemail"]];
+    NSArray *images = @[[UIImage imageNamed:@"later-today"],
+                        [UIImage imageNamed:@"later-tomorrow"],
+                        [UIImage imageNamed:@"later-tomorrow-morning"],
+                        [UIImage imageNamed:@"later-saturday"],
+                        [UIImage imageNamed:@"later-week"],
+                        [UIImage imageNamed:@"later-month"]];
+    return images[indexPath.row];
+}
+
+- (UIImage *)titleForButtonAtIndexPath:(NSIndexPath *)indexPath {
+    NSArray *images = @[@"6 PM",
+                        @"7 AM",
+                        @"Manaña",
+                        @"Sabado",
+                        @"1 semana",
+                        @"1 mes",];
     return images[indexPath.row];
 }
 
